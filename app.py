@@ -24,7 +24,7 @@ if upload_file:
     result=predict.replace({1:'Edible' , 0:'Poisons'})
     st.header('Your prediction is done')
     st.dataframe(result)
-    csv = result.to_csv(index=False).encode('utf-8')
+    csv = result.to_csv().encode('utf-8')
     st.download_button(
         label="Download data as CSV",
         data=csv,
